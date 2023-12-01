@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const images = [
   {
@@ -38,13 +38,7 @@ const Projects = () => {
               className="w-1/2 relative p-3"
               whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
               style={{ zIndex: 1 }}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                layout="responsive"
-                width={500}
-                height={300}
-              />
+              <InteractiveImage src={image.src} alt={image.alt} />
               <p className="text-center bg-red-600 absolute top-0">
                 {image.alt}
               </p>
@@ -65,6 +59,49 @@ const Projects = () => {
         ))}
       </div>
     </>
+  );
+};
+const InteractiveImage = ({ src, alt }) => {
+  const imageRef = useRef(null);
+  let animationFrameId = null;
+
+  const handleMouseMove = (event) => {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+  
+    animationFrameId = requestAnimationFrame(() => {
+      let { left, top, width, height } = imageRef.current.getBoundingClientRect();
+      let x = ((event.clientX - left) / width - 0.2) * 1.2;
+      let y = ((event.clientY - top) / height - 0.2) * 1.2;
+      imageRef.current.style.transform = `perspective(500px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    });
+  };
+  const handleMouseLeave = () => {
+    imageRef.current.style.transform = `perspective(500px) rotateX(0) rotateY(0)`;
+  };
+
+  useEffect(() => {
+    const imageElement = imageRef.current;
+    imageElement.addEventListener("mousemove", handleMouseMove);
+    imageElement.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      imageElement.removeEventListener("mousemove", handleMouseMove);
+      imageElement.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={imageRef}
+      style={{
+        perspective: "500px",
+        transformStyle: "preserve-3d",
+        transition: "transform 50ms linear",
+      }}
+    >
+      <Image src={src} alt={alt} layout="responsive" width={500} height={300} />
+    </div>
   );
 };
 
