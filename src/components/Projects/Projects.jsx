@@ -10,6 +10,8 @@ const images = [
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-firebase.svg",
     tech3: "/Tech/material-ui.svg",
+    tech4: "/Tech/icons8-tailwind-css.svg",
+    tech5: "/Tech/i18next.svg",
   },
   {
     src: "/projects/Sougna.png",
@@ -17,23 +19,23 @@ const images = [
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-tailwind-css.svg",
-    tech3: "",
+    tech3: "/Tech/icons8-firebase.svg",
   },
   {
     src: "/projects/Madlibs.png",
     alt: "https://202306-nea-dz-few.github.io/madlibs-911/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-css.svg",
-    tech2: "",
-    tech3: "",
+    tech2: "/Tech/icons8-html.svg",
+    tech3: "/Tech/icons8-javascript.svg",
   },
   {
     src: "/projects/Movie.png",
     alt: "https://reelio-topaz.vercel.app/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
-    tech2: "",
-    tech3: "",
+    tech2: "/Tech/DaisyUi.webp",
+    tech3: "/Tech/icons8-css.svg",
   },
   {
     src: "/projects/Lemon.png",
@@ -41,7 +43,7 @@ const images = [
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-css.svg",
-    tech3: "",
+    tech3: "/Tech/icons8-react-native.svg",
   },
 ];
 const Projects = () => {
@@ -78,12 +80,22 @@ const Projects = () => {
                     el,
                   ])
                 }
-                className="text-center flex gap-8 px-3 absolute top-0 shadow-p">
-                <Image src={image.tech1} width={30} height={30} alt="" />
-
-                <Image src={image.tech2} width={30} height={30} alt="" />
-
-                <Image src={image.tech3} width={30} height={30} alt="" />
+                className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-[300px] shadow-p">
+                {image.tech1 && (
+                  <Image src={image.tech1} width={40} height={40} alt="" />
+                )}
+                {image.tech2 && (
+                  <Image src={image.tech2} width={40} height={40} alt="" />
+                )}
+                {image.tech3 && (
+                  <Image src={image.tech3} width={40} height={40} alt="" />
+                )}
+                {image.tech4 && (
+                  <Image src={image.tech4} width={40} height={40} alt="" />
+                )}
+                {image.tech5 && (
+                  <Image src={image.tech5} width={40} height={40} alt="" />
+                )}
               </p>
             </motion.div>
             <p

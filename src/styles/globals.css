@@ -11,6 +11,14 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 0px 100px;
+  /* cursor: url('/next.svg'), auto; */
+}
+.custom-cursor {
+  cursor: none;
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+  transition: all 0.2s ease;
 }
 
 .scrollBar {

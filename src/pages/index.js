@@ -7,11 +7,13 @@ import TechStack from "@/components/TechStack/TechStack";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Projects />
-      <TechStack />
-      <Contact />
+      <div className="relative px-3">
+        <Hero />
+        <About />
+        <Projects />
+        <TechStack />
+        <Contact />
+      </div>
     </>
   );
 }

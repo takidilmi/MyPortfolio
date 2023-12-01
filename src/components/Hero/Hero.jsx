@@ -4,7 +4,7 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <div className="flex mt-10 flex-row flex-wrap-reverse justify-around items-center text-white">
+      <div className="flex pt-6 flex-row flex-wrap-reverse justify-around items-center text-white">
         <div className="text-[30px] break-words w-[65vw]">
           <p>
             Hi, my name is <b>Takieddine Dilmi</b>, a talented frontend web
