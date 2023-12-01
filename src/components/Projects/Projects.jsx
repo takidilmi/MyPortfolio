@@ -16,14 +16,14 @@ const images = [
     alt: "https://sougna.vercel.app/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
-    tech2: "",
+    tech2: "/Tech/icons8-tailwind-css.svg",
     tech3: "",
   },
   {
     src: "/projects/Madlibs.png",
     alt: "https://202306-nea-dz-few.github.io/madlibs-911/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
-    tech1: "/Tech/icons8-nextjs.svg",
+    tech1: "/Tech/icons8-css.svg",
     tech2: "",
     tech3: "",
   },
@@ -40,7 +40,7 @@ const images = [
     alt: "Lemon",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
-    tech2: "",
+    tech2: "/Tech/icons8-css.svg",
     tech3: "",
   },
 ];
@@ -78,12 +78,12 @@ const Projects = () => {
                     el,
                   ])
                 }
-                className="text-center flex absolute top-0 shadow-p">
+                className="text-center flex gap-8 px-3 absolute top-0 shadow-p">
                 <Image src={image.tech1} width={30} height={30} alt="" />
 
-                <Image src={image.tech1} width={30} height={30} alt="" />
+                <Image src={image.tech2} width={30} height={30} alt="" />
 
-                <Image src={image.tech1} width={30} height={30} alt="" />
+                <Image src={image.tech3} width={30} height={30} alt="" />
               </p>
             </motion.div>
             <p
@@ -169,7 +169,7 @@ const InteractiveImage = ({ src, alt }) => {
         transition: "transform 50ms linear",
       }}>
       <Image
-        className="object-cover max-h-[200px]"
+        className="object-cover rounded-[4px] max-h-[200px]"
         src={src}
         alt={alt}
         layout="responsive"
