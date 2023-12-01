@@ -48,7 +48,7 @@ const Contact = () => {
           )}
           {formOpen && (
             <form onSubmit={handleSubmit}>
-              <div className="formContainer inline">
+              <div className="flex justify-between flex-wrap">
                 <div className="formField short">
                   <label>Name</label>
                   <input
