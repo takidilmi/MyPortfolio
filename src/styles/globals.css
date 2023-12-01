@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @media (prefers-color-scheme: dark) {
 }
 
 body {
   background-image: url(/images/background.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 0px 100px;
 }

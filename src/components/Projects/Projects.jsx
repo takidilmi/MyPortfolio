@@ -25,14 +25,14 @@ const images = [
 const Projects = () => {
   return (
     <>
-      <div className="mt-20 text-slate-200">
+      <div className="mt-20 text-slate-200 ">
         {images.map((image, index) => (
           <div
             key={index}
             className={`flex flex-wrap ${
               index % 2 === 0 ? "flex-row-reverse" : "flex-row"
             } justify-between mb-5`}>
-            <div className="w-1/2">
+            <div className="w-1/2 p-3">
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -43,7 +43,7 @@ const Projects = () => {
             </div>
             <p
               className={`w-1/2 break-words text-justify ${
-                index % 2 === 0 ? "text-right p-3" : "text-left p-3"
+                index % 2 === 0 ? "text-right p-5" : "text-left p-5"
               }`}>
               {image.text}
             </p>
