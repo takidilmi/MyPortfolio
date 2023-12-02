@@ -140,6 +140,7 @@ const InteractiveImage = ({ src, alt }) => {
         imageRef.current.style.transform = `perspective(500px) rotateX(${
           -y * 10
         }deg) rotateY(${x * 10}deg)`;
+        imageRef.current.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
       }
     });
   };
@@ -151,9 +152,10 @@ const InteractiveImage = ({ src, alt }) => {
 
     animationFrameId = requestAnimationFrame(() => {
       if (imageRef.current) {
-        imageRef.current.style.transition = "transform 0.2s linear";
+        imageRef.current.style.transition = "transform 1s linear, background-position 5s linear";
         imageRef.current.style.transform =
           "perspective(500px) rotateX(0) rotateY(0)";
+        imageRef.current.style.backgroundPosition = 'center';
       }
     });
   };
@@ -176,20 +178,17 @@ const InteractiveImage = ({ src, alt }) => {
     <div
       ref={imageRef}
       style={{
-        perspective: "500px",
-        transformStyle: "preserve-3d",
-        transition: "transform 50ms linear",
-      }}>
-      <Image
-        className="object-cover rounded-[4px] max-h-[200px]"
-        src={src}
-        alt={alt}
-        layout="responsive"
-        width={500}
-        height={300}
-      />
-    </div>
+        backgroundImage: `url(${src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        transition: 'transform 1s linear, background-position 5s linear',
+        width: '100%',
+        height: '200px',
+        overflow: 'hidden',
+      }}
+    />
   );
 };
+
 
 export default Projects;
