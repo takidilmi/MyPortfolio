@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="filterBlur flex items-center justify-center mt-40 pb-10" id="app">
+      <div className="flex items-center justify-center mt-40 pb-10" id="app">
         <div className={`addProduct ${formOpen ? "open" : ""}`}>
           {!formOpen && (
             <div className="buttonCopy" onClick={() => setFormOpen(true)}>

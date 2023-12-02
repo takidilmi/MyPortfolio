@@ -8,13 +8,14 @@ import {
   FaSearchPlus,
   FaSearchMinus,
 } from "react-icons/fa";
+import Link from "next/link";
 
 function PdfViewer() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1.0);
   const [isOpen, setIsOpen] = useState(false);
-  const [buttonText, setButtonText] = useState("Open");
+  const [buttonText, setButtonText] = useState("Show CV");
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -38,26 +39,35 @@ function PdfViewer() {
 
   return (
     <>
-      <button
-        className="text-white bg-red-600 p-2 rounded-[4px]"
-        onClick={() => {
-          setIsOpen(!isOpen);
-          setButtonText(isOpen ? "Show CV" : "Close");
-        }}>
-        <AnimatePresence mode='wait'>
-          <motion.span
-            key={buttonText}
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 100, opacity: 0 }}
-            transition={{ duration: 0.3 }}>
-            {buttonText}
-          </motion.span>
-        </AnimatePresence>
-      </button>
+      <div className="flex gap-20 flex-wrap">
+        <motion.a
+          href="/CV/TakiDilmi.pdf"
+          download
+          className="text-white hover:opacity-70 mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px] underlineEffect"
+          whileHover={{ scaleX: 1 }}>
+          Download CV
+        </motion.a>
+        <button
+          className="text-white underline-rtl items-end hover:opacity-70 mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px]"
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setButtonText(isOpen ? "Show CV" : "Close");
+          }}>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={buttonText}
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ duration: 0.3 }}>
+              {buttonText}
+            </motion.span>
+          </AnimatePresence>
+        </button>
+      </div>
       {isOpen && (
         <motion.div
-          className="ml-16 mt-5 flex w-[85vw] flex-row gap-2 items-center justify-center"
+          className="flex w-[85vw] flex-row gap-2 items-center justify-center"
           initial={{ opacity: 0, height: 0, width: 0 }}
           animate={
             isOpen

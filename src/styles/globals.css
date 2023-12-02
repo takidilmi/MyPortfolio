@@ -73,14 +73,57 @@ coverWrapper::after {
   opacity: 1;
   transform: translate3d(0%, -30%, 100px);
 }
+/*udnerline animation*/
+.underlineEffect {
+  position: relative;
+  overflow: hidden;
+}
+
+.underlineEffect::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underlineEffect:hover::after {
+  transform: scaleX(1);
+}
+
+.underline-rtl {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-rtl::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-rtl:hover::after {
+  transform: scaleX(1);
+}
 
 body {
-  background-image: url(/images/background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: 
+  linear-gradient(to right, red, orange),
+  linear-gradient(to bottom, yellow, green),
+  linear-gradient(to top left, blue, purple);
   padding: 0px 100px;
-  display: flex;
 }
 
 .scrollBar {

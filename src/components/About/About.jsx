@@ -7,13 +7,13 @@ const About = () => {
       <motion.div
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 4 }}
+        transition={{ duration: 1, delay: 3 }}
         className="text-slate-200 text-[30px] justify-center flex flex-col items-center mt-20">
         <h1 className="font-[500]">AboutMe</h1>
         <motion.p
           initial={{ y: -250, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 5 }}
+          transition={{ duration: 1, delay: 4 }}
           className="font-[300]">
           Hi, I&apos;m Takieddine Dilmi, a front end web developer with proven
           experience in creating beautiful and responsive websites. I specialize
