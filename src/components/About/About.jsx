@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div className="text-slate-200 text-[30px] flex flex-col items-center mt-20">
+      <div className="text-slate-200 text-[30px] justify-center flex flex-col items-center mt-20">
         <h1 className="font-[500]">AboutMe</h1>
         <p className="font-[300]">
           Hi, I&apos;m Takieddine Dilmi, a front end web developer with proven

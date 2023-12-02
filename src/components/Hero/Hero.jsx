@@ -1,19 +1,32 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import NameWriter from "../ScrambleText";
 
 const Hero = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}>
       <div className="flex pt-6 flex-row flex-wrap-reverse justify-around items-center text-white">
-        <div className="text-[30px] break-words w-[65vw]">
+        <motion.div
+          className="text-[30px] break-words w-[65vw]"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}>
           <p>
-            Hi, my name is <b>Takieddine Dilmi</b>, a talented frontend web
-            developer.
+            Hi, my name is <b><NameWriter /></b>
+            , a talented frontend web developer.
           </p>
           <br></br>
           <p className="opacity-70">let me show you...</p>
-        </div>
-        <div className="w-64 h-64 rounded-full overflow-hidden flex items-center justify-center">
+        </motion.div>
+        <motion.div
+          className="w-64 h-64 rounded-full overflow-hidden flex items-center justify-center"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}>
           <Image
             src="/images/Takidilmi.jpg"
             alt="Takidilmi"
@@ -22,9 +35,9 @@ const Hero = () => {
             className="h-full w-full object-cover"
             objectFit="cover"
           />
-        </div>
+        </motion.div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

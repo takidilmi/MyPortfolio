@@ -56,7 +56,7 @@ const Projects = () => {
           <div
             key={index}
             className={`flex justify-center items-center min-h-[300px] flex-wrap ${
-              index % 2 === 0 ? "flex-row-reverse" : "flex-row"
+              index % 2 === 0 ? "md:flex-row-reverse flex-col" : "md:flex-row flex-col"
             } justify-between mb-5`}>
             <motion.div
               className="w-1/2 relative p-3"
@@ -80,7 +80,7 @@ const Projects = () => {
                     el,
                   ])
                 }
-                className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-[300px] shadow-p">
+                className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
                 {image.tech1 && (
                   <Image src={image.tech1} width={40} height={40} alt="" />
                 )}
