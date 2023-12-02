@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const images = [
   {
@@ -52,60 +53,86 @@ const Projects = () => {
   return (
     <>
       <div className="mt-20 text-slate-200">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`flex justify-center items-center min-h-[300px] flex-wrap ${
-              index % 2 === 0 ? "md:flex-row-reverse flex-col" : "md:flex-row flex-col"
-            } justify-between mb-5`}>
+        {images.map((image, index) => {
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const controls = useAnimation();
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const { ref, inView } = useInView({
+            triggerOnce: true,
+            threshold: 0.5, // Adjusts when the animation triggers (0.5 means when 50% of the element is visible)
+          });
+
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          useEffect(() => {
+            if (inView) {
+              controls.start("visible");
+            }
+          }, [controls, inView]);
+
+          return (
             <motion.div
-              className="w-1/2 relative p-3"
-              whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
-              style={{ zIndex: 1 }}
-              onHoverStart={() => {
-                shadowPRefs.current[index].forEach((p) => {
-                  p.style.backdropFilter = "blur(10px)";
-                });
-              }}
-              onHoverEnd={() => {
-                shadowPRefs.current[index].forEach((p) => {
-                  p.style.backdropFilter = "none";
-                });
+              ref={ref}
+              key={index}
+              className={`flex justify-center items-center min-h-[300px] flex-wrap ${
+                index % 2 === 0
+                  ? "md:flex-row-reverse flex-col"
+                  : "md:flex-row flex-col"
+              } justify-between mb-5`}
+              initial={{ opacity: 0, translateX: index % 2 === 0 ? 100 : -100 }}
+              animate={controls}
+              transition={{ duration: 1 }}
+              variants={{
+                visible: { opacity: 1, translateX: 0 },
               }}>
-              <InteractiveImage src={image.src} alt={image.alt} />
+              <motion.div
+                className="w-1/2 relative p-3"
+                whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+                style={{ zIndex: 1 }}
+                onHoverStart={() => {
+                  shadowPRefs.current[index].forEach((p) => {
+                    p.style.backdropFilter = "blur(10px)";
+                  });
+                }}
+                onHoverEnd={() => {
+                  shadowPRefs.current[index].forEach((p) => {
+                    p.style.backdropFilter = "none";
+                  });
+                }}>
+                <InteractiveImage src={image.src} alt={image.alt} />
+                <p
+                  ref={(el) =>
+                    (shadowPRefs.current[index] = [
+                      ...(shadowPRefs.current[index] || []),
+                      el,
+                    ])
+                  }
+                  className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
+                  {image.tech1 && (
+                    <Image src={image.tech1} width={40} height={40} alt="" />
+                  )}
+                  {image.tech2 && (
+                    <Image src={image.tech2} width={40} height={40} alt="" />
+                  )}
+                  {image.tech3 && (
+                    <Image src={image.tech3} width={40} height={40} alt="" />
+                  )}
+                  {image.tech4 && (
+                    <Image src={image.tech4} width={40} height={40} alt="" />
+                  )}
+                  {image.tech5 && (
+                    <Image src={image.tech5} width={40} height={40} alt="" />
+                  )}
+                </p>
+              </motion.div>
               <p
-                ref={(el) =>
-                  (shadowPRefs.current[index] = [
-                    ...(shadowPRefs.current[index] || []),
-                    el,
-                  ])
-                }
-                className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
-                {image.tech1 && (
-                  <Image src={image.tech1} width={40} height={40} alt="" />
-                )}
-                {image.tech2 && (
-                  <Image src={image.tech2} width={40} height={40} alt="" />
-                )}
-                {image.tech3 && (
-                  <Image src={image.tech3} width={40} height={40} alt="" />
-                )}
-                {image.tech4 && (
-                  <Image src={image.tech4} width={40} height={40} alt="" />
-                )}
-                {image.tech5 && (
-                  <Image src={image.tech5} width={40} height={40} alt="" />
-                )}
+                className={`w-1/2 break-words text-justify max-h-[260px] overflow-y-auto  scrollBar ${
+                  index % 2 === 0 ? "text-right p-5" : "text-left p-5"
+                }`}>
+                {image.text}
               </p>
             </motion.div>
-            <p
-              className={`w-1/2 break-words text-justify max-h-[260px] overflow-y-auto  scrollBar ${
-                index % 2 === 0 ? "text-right p-5" : "text-left p-5"
-              }`}>
-              {image.text}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <style jsx>{`
         .shadow-p {
@@ -152,10 +179,11 @@ const InteractiveImage = ({ src, alt }) => {
 
     animationFrameId = requestAnimationFrame(() => {
       if (imageRef.current) {
-        imageRef.current.style.transition = "transform 1s linear, background-position 5s linear";
+        imageRef.current.style.transition =
+          "transform 1s linear, background-position 5s linear";
         imageRef.current.style.transform =
           "perspective(500px) rotateX(0) rotateY(0)";
-        imageRef.current.style.backgroundPosition = 'center';
+        imageRef.current.style.backgroundPosition = "center";
       }
     });
   };
@@ -179,16 +207,15 @@ const InteractiveImage = ({ src, alt }) => {
       ref={imageRef}
       style={{
         backgroundImage: `url(${src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        transition: 'transform 1s linear, background-position 5s linear',
-        width: '100%',
-        height: '200px',
-        overflow: 'hidden',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        transition: "transform 1s linear, background-position 5s linear",
+        width: "100%",
+        height: "200px",
+        overflow: "hidden",
       }}
     />
   );
 };
-
 
 export default Projects;
