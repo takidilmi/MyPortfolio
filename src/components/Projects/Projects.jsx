@@ -59,7 +59,7 @@ const Projects = () => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const { ref, inView } = useInView({
             triggerOnce: true,
-            threshold: 0.5, // Adjusts when the animation triggers (0.5 means when 50% of the element is visible)
+            threshold: 0.6, // Adjusts when the animation triggers (0.5 means when 50% of the element is visible)
           });
 
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -78,7 +78,7 @@ const Projects = () => {
                   ? "md:flex-row-reverse flex-col"
                   : "md:flex-row flex-col"
               } justify-between mb-5`}
-              initial={{ opacity: 0, translateX: index % 2 === 0 ? 100 : -100 }}
+              initial={{ opacity: 0, translateX: index % 2 === 0 ? 200 : -200 }}
               animate={controls}
               transition={{ duration: 1 }}
               variants={{
@@ -89,23 +89,14 @@ const Projects = () => {
                 whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
                 style={{ zIndex: 1 }}
                 onHoverStart={() => {
-                  shadowPRefs.current[index].forEach((p) => {
-                    p.style.backdropFilter = "blur(10px)";
-                  });
+                  shadowPRefs.current[index].style.backdropFilter = "blur(10px)";
                 }}
                 onHoverEnd={() => {
-                  shadowPRefs.current[index].forEach((p) => {
-                    p.style.backdropFilter = "none";
-                  });
+                  shadowPRefs.current[index].style.backdropFilter = "none";
                 }}>
                 <InteractiveImage src={image.src} alt={image.alt} />
                 <p
-                  ref={(el) =>
-                    (shadowPRefs.current[index] = [
-                      ...(shadowPRefs.current[index] || []),
-                      el,
-                    ])
-                  }
+                  ref={(el) => (shadowPRefs.current[index] = el)}
                   className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
                   {image.tech1 && (
                     <Image src={image.tech1} width={40} height={40} alt="" />
