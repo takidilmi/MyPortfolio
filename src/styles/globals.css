@@ -118,12 +118,14 @@ coverWrapper::after {
   transform: scaleX(1);
 }
 
+
 body {
-  background: 
-  linear-gradient(to right, red, orange),
-  linear-gradient(to bottom, yellow, green),
-  linear-gradient(to top left, blue, purple);
+  background-image: url(/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 0px 100px;
+  display: flex;
 }
 
 .scrollBar {
