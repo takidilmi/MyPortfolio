@@ -1,10 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const HoverEffect = () => {
   return (
     <>
-      <div className="coverCard">
+      <motion.div
+        className="coverCard rounded-full"
+        whileHover={{
+          y: "-5%",
+          rotateX: 30,
+          boxShadow: "2px 35px 32px -8px rgba(0, 0, 0, 0.75)",
+          transition: { duration: 1 },
+        }}>
         <div className="coverWrapper">
           <Image
             className="coverEffect"
@@ -21,7 +29,7 @@ const HoverEffect = () => {
           width={500}
           height={300}
         />
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .coverCard {
-  height: 350px;
-  width: 350px;
+  height: 560px;
+  width: 450px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -22,13 +22,15 @@
   position: absolute;
   border-radius: 100%;
   overflow: hidden;
-  width: 256px;
-  height: 256px;
+  opacity: 1;
+  width: 356px;
+  height: 356px;
   z-index: -1;
 }
 .coverCard:hover .coverWrapper {
-  transform: perspective(900px) translateY(-5%) rotateX(30deg) translateZ(0);
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
   box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  opacity: 0.7;
 }
 .coverWrapper::before,
 .coverWrapper::after {
@@ -60,11 +62,11 @@ coverWrapper::after {
 }
 .character {
   width: 300px;
-  height: 400px;
+  height: 600px;
   opacity: 0;
   transition: all 1s;
   position: absolute;
-  bottom: -50px;
+  bottom: -120px;
   z-index: -1;
 }
 .coverCard:hover .character {

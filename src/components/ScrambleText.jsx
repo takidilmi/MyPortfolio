@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const NameWriter = () => {
   const [name, setName] = useState("");
   const fullName = "Takieddine Dilmi";
-  const characters = "&é@/.w-+ç9$=+}|[ه";
+  const characters = "a-zA-Z0-9!@#$%^&*()_+{}|:\"<>?-=[];',./";
   let lastUpdate = Date.now();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const NameWriter = () => {
     const interval = setInterval(() => {
       if (currentIndex < fullName.length) {
         timeoutId = setInterval(() => {
-          if (Date.now() - lastUpdate < 800) {
+          if (Date.now() - lastUpdate < 600) {
             let randomIndex = Math.floor(Math.random() * characters.length);
             setName(fullName.slice(0, currentIndex) + characters[randomIndex]);
           } else {
