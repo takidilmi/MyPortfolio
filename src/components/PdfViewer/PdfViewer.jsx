@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Document, Page } from "react-pdf";
+import { AnimatePresence, motion } from "framer-motion";
+
 import {
   FaArrowRight,
   FaArrowLeft,
@@ -10,7 +12,9 @@ import {
 function PdfViewer() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [scale, setScale] = useState(1.0); // Add a new state variable for scale
+  const [scale, setScale] = useState(1.0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [buttonText, setButtonText] = useState("Open");
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -34,37 +38,66 @@ function PdfViewer() {
 
   return (
     <>
-    <button>open</button>
-      <div className="ml-16 mt-10 flex w-[85vw] flex-row gap-2 items-center justify-center">
-        <div className="flex flex-col gap-6">
-          <button onClick={zoomOut}>
-            <FaSearchMinus color="white" />
-          </button>
-          <button onClick={goToPrevPage}>
-            <FaArrowLeft color="white" />
-          </button>
-        </div>
-        <div>
-          <Document
-            file="/CV/TakiDilmi.pdf"
-            onLoadSuccess={onDocumentLoadSuccess}>
-            <Page
-              pageNumber={pageNumber}
-              scale={scale} // Use the scale state variable here
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-            />
-          </Document>
-        </div>
-        <div className="flex flex-col gap-6">
-          <button onClick={zoomIn}>
-            <FaSearchPlus color="white" />
-          </button>
-          <button onClick={goToNextPage}>
-            <FaArrowRight color="white" />
-          </button>
-        </div>
-      </div>
+      <button
+        className="text-white bg-red-600 p-2 rounded-[4px]"
+        onClick={() => {
+          setIsOpen(!isOpen);
+          setButtonText(isOpen ? "Show CV" : "Close");
+        }}>
+        <AnimatePresence mode='wait'>
+          <motion.span
+            key={buttonText}
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 100, opacity: 0 }}
+            transition={{ duration: 0.3 }}>
+            {buttonText}
+          </motion.span>
+        </AnimatePresence>
+      </button>
+      {isOpen && (
+        <motion.div
+          className="ml-16 mt-5 flex w-[85vw] flex-row gap-2 items-center justify-center"
+          initial={{ opacity: 0, height: 0, width: 0 }}
+          animate={
+            isOpen
+              ? { opacity: 1, height: "100%", width: "85vw" }
+              : { opacity: 0, height: 0, width: 0 }
+          }
+          transition={{ duration: 0.5 }}>
+          <div className="flex flex-col gap-6">
+            <button onClick={zoomOut}>
+              <FaSearchMinus color="white" />
+            </button>
+            <button onClick={goToPrevPage}>
+              <FaArrowLeft color="white" />
+            </button>
+          </div>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}>
+            <Document
+              file="/CV/TakiDilmi.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}>
+              <Page
+                pageNumber={pageNumber}
+                scale={scale} // Use the scale state variable here
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+              />
+            </Document>
+          </motion.div>
+          <div className="flex flex-col gap-6">
+            <button onClick={zoomIn}>
+              <FaSearchPlus color="white" />
+            </button>
+            <button onClick={goToNextPage}>
+              <FaArrowRight color="white" />
+            </button>
+          </div>
+        </motion.div>
+      )}
     </>
   );
 }
