@@ -13,7 +13,7 @@ body {
 }
 
 * {
-  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(153, 0, 255, 0.404);
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(119, 56, 161, 0.404);
   border-radius: 4px;
 }
 
@@ -30,7 +30,7 @@ body {
 
 
 *::-webkit-scrollbar-track {
-  background-color: rgba(153, 0, 255, 0.404);
+  background-color: rgba(119, 56, 161, 0.589);
   border-radius: 4px;
 }
 
