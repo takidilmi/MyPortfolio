@@ -117,7 +117,26 @@ coverWrapper::after {
 .underline-rtl:hover::after {
   transform: scaleX(1);
 }
-
+.textPurple {
+  background: #6e3594;
+  background: -webkit-repeating-linear-gradient(
+    to bottom right,
+    #6e3594 0%,
+    #a1959d 91%
+  );
+  background: -moz-repeating-linear-gradient(
+    to bottom right,
+    #6e3594 0%,
+    #a1959d 91%
+  );
+  background: repeating-linear-gradient(
+    to bottom right,
+    #6e3594 0%,
+    #a1959d 91%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 body {
   background-image: url(/images/background.jpg);

@@ -34,7 +34,7 @@ const images = [
     repository: "https://github.com/202306-NEA-DZ-FEW/madlibs-911",
     alt: "Madlibs",
     link: "https://202306-nea-dz-few.github.io/madlibs-911/",
-    text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
+    text: "I created my own Mad Libs game with five other team members using HTML, CSS, and JS. We wrote a story with some words replaced by blanks that indicate the part of speech, such as nouns, verbs, adjectives, etc. We used regular expressions to find and replace the blanks in our story with inputs, and we showed two copies of the story: one in the edit view, where the players can fill in the inputs, and one in the preview, where the players can see the completed story. We also added some features, such as hotkeys, constraining user inputs, and live update. I was responsible for the front-end development and the user interface design, and I used HTML, CSS, and JS to create a fun and interactive web page. I was also the team leader for a week, and I coordinated the tasks, deadlines, and feedback among the team members. We communicated and collaborated with each other using GitHub, Discord, and Zoom, and we deployed our web page on GitHub Pages. I'm proud of this project because it demonstrates my ability to create a fun and interactive web application that uses HTML, CSS, and JS in unison.",
     tech1: "/Tech/icons8-css.svg",
     tech2: "/Tech/icons8-html.svg",
     tech3: "/Tech/icons8-javascript.svg",
@@ -44,7 +44,7 @@ const images = [
     repository: "https://github.com/202306-NEA-DZ-FEW/movie-project-devsquad",
     alt: "Relio",
     link: "https://reelio-topaz.vercel.app/",
-    text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
+    text: "I created a movie project with five other team members using Next.js, Daisy UI, Tailwind, and an API. It is a platform that allows users to browse and discover movies from different genres, years, and ratings. We used Next.js to create a fast and dynamic website that supports server-side rendering and static site generation. We used Daisy UI and Tailwind to style our website and make it responsive and attractive. We used an API to fetch data from a movie database and display it on our website. We also implemented semantic tags to improve the accessibility and SEO of our website. I was responsible for the front-end development and the user interface design, and I used Next.js, Daisy UI, and Tailwind to create a modern and elegant website. We communicated and collaborated with each other using GitHub, Discord, and Zoom, and we deployed our website on Vercel. I'm proud of this project because it demonstrates my ability to create a full-stack web application that uses Next.js, Daisy UI, Tailwind, and an API in unison.",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/DaisyUi.webp",
     tech3: "/Tech/icons8-css.svg",
@@ -54,7 +54,7 @@ const images = [
     repository: "https://github.com/takidilmi/little-lemon",
     alt: "Lemon",
     link: "",
-    text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
+    text: "Little Lemon Booking Website is a capstone project that I created during Meta's Coursera Front-End Development course. It is a platform that allows users to book rooms and services from the Little Lemon restaurant. I used React to create a fast and dynamic website that supports user authentication, booking confirmation, and payment processing. I also used pure CSS to style my website and make it responsive and attractive. I followed the best practices of front-end development, such as using semantic tags, responsive design, and accessibility features. I worked on this project fully alone, and I learned a lot from the experience. I'm proud of this project because it demonstrates my ability to create a full-stack web application that uses React and pure CSS in unison.",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-css.svg",
     tech3: "/Tech/icons8-react-native.svg",
@@ -117,25 +117,28 @@ const Projects = () => {
                   shadowPRefs.current[index].style.backdropFilter = "none";
                 }}>
                 <InteractiveImage src={image.src} alt={image.alt} />
-                <p
-                  ref={(el) => (shadowPRefs.current[index] = el)}
-                  className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
-                  {image.tech1 && (
-                    <Image src={image.tech1} width={40} height={40} alt="" />
-                  )}
-                  {image.tech2 && (
-                    <Image src={image.tech2} width={40} height={40} alt="" />
-                  )}
-                  {image.tech3 && (
-                    <Image src={image.tech3} width={40} height={40} alt="" />
-                  )}
-                  {image.tech4 && (
-                    <Image src={image.tech4} width={40} height={40} alt="" />
-                  )}
-                  {image.tech5 && (
-                    <Image src={image.tech5} width={40} height={40} alt="" />
-                  )}
-                </p>
+                <div>
+                  <p className="absolute textPurple font-[700] bottom-16 ml-5">Used and Learned</p>
+                  <p
+                    ref={(el) => (shadowPRefs.current[index] = el)}
+                    className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
+                    {image.tech1 && (
+                      <Image src={image.tech1} width={40} height={40} alt="" />
+                    )}
+                    {image.tech2 && (
+                      <Image src={image.tech2} width={40} height={40} alt="" />
+                    )}
+                    {image.tech3 && (
+                      <Image src={image.tech3} width={40} height={40} alt="" />
+                    )}
+                    {image.tech4 && (
+                      <Image src={image.tech4} width={40} height={40} alt="" />
+                    )}
+                    {image.tech5 && (
+                      <Image src={image.tech5} width={40} height={40} alt="" />
+                    )}
+                  </p>
+                </div>
               </motion.div>
               <div
                 className={`w-1/2 break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${

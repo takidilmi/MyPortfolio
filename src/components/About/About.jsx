@@ -19,8 +19,8 @@ const About = () => {
           experience in creating beautiful and responsive websites. I specialize
           in <span>Next.js</span>, a React framework that enables fast and{" "}
           <span>SEO-friendly</span> web development. I also have strong skills in{" "}
-          <span>JavaScript</span>, <span>HTML</span>, <span>CSS</span>, and
-          Tailwind, a utility-first CSS framework that helps me design stunning
+          <span>JavaScript</span>, <span>HTML</span>, <span>CSS</span>, and{" "}
+          <span>Tailwind</span>, a utility-first CSS framework that helps me design stunning
           layouts. I&apos;m passionate about learning new technologies and best
           practices, and I always strive to deliver high-quality code and user
           experience. Whether you need a landing page, a blog, an e-commerce
