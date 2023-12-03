@@ -2,12 +2,15 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const images = [
   {
     src: "/projects/Pebble.png",
-    alt: "https://pebble-work.vercel.app/",
-    text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
+    repository:"https://github.com/202306-NEA-DZ-FEW/Pebble-work",
+    alt: "PebbleWork",
+    link: "https://pebble-work.vercel.app/",
+    text: "Pebble Work is a capstone project that showcases my skills and creativity as a web developer. It is a platform that connects volunteers and organizers, allowing them to find and work on projects that are aligned with the 17 Sustainable Development Goals (SDGs). I worked with a team of five to create this project, and I was responsible for the front-end development. We communicated and coordinated with each other using Discord, GitHub, and Zoom, and we followed the agile methodology and the Git flow. I used Next.js, Firebase, i18next, Material UI, Tailwind, and vanilla CSS to create a responsive and dynamic website that supports multiple languages and animations. I also added tests and snapshots to the components using Jest, and used Git action as my deployment tool. I'm proud of this project because it demonstrates my ability to create a full-stack web application that contributes to a better and more sustainable future for all.",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-firebase.svg",
     tech3: "/Tech/material-ui.svg",
@@ -16,7 +19,9 @@ const images = [
   },
   {
     src: "/projects/Sougna.png",
-    alt: "https://sougna.vercel.app/",
+    repository:"https://github.com/202306-NEA-DZ-FEW/e-commerce-project-buy-or-die",
+    alt: "Sougna",
+    link: "https://sougna.vercel.app/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-tailwind-css.svg",
@@ -24,7 +29,9 @@ const images = [
   },
   {
     src: "/projects/Madlibs.png",
-    alt: "https://202306-nea-dz-few.github.io/madlibs-911/",
+    repository:"https://github.com/202306-NEA-DZ-FEW/madlibs-911",
+    alt: "Madlibs",
+    link: "https://202306-nea-dz-few.github.io/madlibs-911/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-css.svg",
     tech2: "/Tech/icons8-html.svg",
@@ -32,7 +39,9 @@ const images = [
   },
   {
     src: "/projects/Movie.png",
-    alt: "https://reelio-topaz.vercel.app/",
+    repository:"https://github.com/202306-NEA-DZ-FEW/movie-project-devsquad",
+    alt: "Relio",
+    link: "https://reelio-topaz.vercel.app/",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/DaisyUi.webp",
@@ -40,7 +49,9 @@ const images = [
   },
   {
     src: "/projects/Lemon.png",
+    repository:"https://github.com/takidilmi/little-lemon",
     alt: "Lemon",
+    link: "",
     text: "coming soon xD why not just testing out my writing speed as yah i got experienced a lot and this is amazing i can thing and type fast",
     tech1: "/Tech/icons8-nextjs.svg",
     tech2: "/Tech/icons8-css.svg",
@@ -124,12 +135,20 @@ const Projects = () => {
                   )}
                 </p>
               </motion.div>
-              <p
-                className={`w-1/2 break-words text-justify max-h-[260px] overflow-y-auto  scrollBar ${
+              <div
+                className={`w-1/2 break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${
                   index % 2 === 0 ? "text-right p-5" : "text-left p-5"
                 }`}>
-                {image.text}
-              </p>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-[18px] font-[600]">{image.alt}</h3>
+                  <div>
+                    <Link href={image.link}></Link>
+                    <Link href={image.link}>LINK</Link>
+                  </div>
+                </div>
+                <br></br>
+                <p>{image.text}</p>
+              </div>
             </motion.div>
           );
         })}
