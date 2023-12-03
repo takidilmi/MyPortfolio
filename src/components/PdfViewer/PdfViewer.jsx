@@ -46,7 +46,7 @@ function PdfViewer() {
           transition={{ duration: 1, delay: 1, type: "tween", ease: "linear" }}
           href="/CV/TakiDilmi.pdf"
           download
-          className="text-white hover:opacity-70 mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px] underlineEffect"
+          className="text-white hover:bg-[#27203ca1] mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px] underlineEffect"
           whileHover={{ scaleX: 1 }}>
           Download CV
         </motion.a>
@@ -54,7 +54,7 @@ function PdfViewer() {
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 2, type: "tween", ease: "linear" }}
-          className="text-white underline-rtl items-end hover:opacity-70 mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px]"
+          className="text-white underline-rtl items-end hover:bg-[#27203ca1] mt-5 text-[15px] bg-[#27203C] p-2 rounded-[4px]"
           onClick={() => {
             setIsOpen(!isOpen);
             setButtonText(isOpen ? "Show CV" : "Close");
