@@ -8,7 +8,7 @@ const HoverEffect = () => {
       <motion.div
         initial={{ y: -200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay:1, type:"tween", ease:"linear" }}>
+        transition={{ duration: 1, delay: 1, type: "tween", ease: "linear" }}>
         <motion.div
           className="coverCard rounded-full"
           whileHover={{
@@ -16,6 +16,11 @@ const HoverEffect = () => {
             rotateX: 30,
             boxShadow: "2px 35px 32px -8px rgba(0, 0, 0, 0.25)",
             transition: { duration: 1 },
+          }}
+          transition={{
+            y: { duration: 1 },
+            rotateX: { duration: 1 },
+            boxShadow: { duration: 0.7 },
           }}>
           <div className="coverWrapper">
             <Image

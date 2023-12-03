@@ -85,11 +85,20 @@ const Projects = () => {
                 visible: { opacity: 1, translateX: 0 },
               }}>
               <motion.div
-                className="w-1/2 relative p-3"
-                whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+                className="w-1/2 relative p-3 rounded-[6px] overflow-hidden"
+                whileHover={{
+                  scale: 1.1,
+                  backdropFilter: "blur(10px)",
+                  transition: { duration: 0.5 },
+                }}
+                transition={{
+                  scale: { duration: 0.35 },
+                  backdropFilter: { duration: 0.35 },
+                }}
                 style={{ zIndex: 1 }}
                 onHoverStart={() => {
-                  shadowPRefs.current[index].style.backdropFilter = "blur(10px)";
+                  shadowPRefs.current[index].style.backdropFilter =
+                    "blur(10px)";
                 }}
                 onHoverEnd={() => {
                   shadowPRefs.current[index].style.backdropFilter = "none";
@@ -204,6 +213,7 @@ const InteractiveImage = ({ src, alt }) => {
         width: "100%",
         height: "200px",
         overflow: "hidden",
+        borderRadius: "4px",
       }}
     />
   );
