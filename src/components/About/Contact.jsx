@@ -43,7 +43,7 @@ const Contact = () => {
         <div className={`addProduct ${formOpen ? "open" : ""}`}>
           {!formOpen && (
             <div className="buttonCopy" onClick={() => setFormOpen(true)}>
-              Get in Touch
+              Contact Me
             </div>
           )}
           {formOpen && (
