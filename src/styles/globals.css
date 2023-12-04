@@ -193,15 +193,17 @@ coverWrapper::after {
 }
 @media only screen and (max-width: 540px) {
   .mobileWidth {
-    width: 95vw;
+    width: 130vw;
   }
   .techWidth {
     width: 30px;
     height: 30px;
   }
-  .coverCard {
-    width: 250px;
-    padding: 0 10px;
-    margin: 0 5px;
+  .coverCard{
+    height: 370px;
+  }
+  .coverWrapper {
+    width: 270px;
+    height: 270px;
   }
 }
