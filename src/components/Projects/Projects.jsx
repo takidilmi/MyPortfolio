@@ -65,7 +65,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="mt-20 text-slate-200">
+      <div className="mt-20 overflow-hidden flex flex-col items-center text-slate-200">
         {images.map((image, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const controls = useAnimation();
@@ -86,7 +86,7 @@ const Projects = () => {
             <motion.div
               ref={ref}
               key={index}
-              className={`flex justify-center items-center min-h-[300px] flex-wrap ${
+              className={`flex justify-center space-y-2 items-center min-h-[300px] flex-wrap ${
                 index % 2 === 0
                   ? "md:flex-row-reverse flex-col"
                   : "md:flex-row flex-col"
@@ -98,7 +98,7 @@ const Projects = () => {
                 visible: { opacity: 1, translateX: 0 },
               }}>
               <motion.div
-                className="w-1/2 relative p-3 rounded-[6px] overflow-hidden"
+                className="md:w-[49vw] w-[95vw] relative p-3 rounded-[6px] overflow-hidden"
                 whileHover={{
                   scale: 1.1,
                   backdropFilter: "blur(2px)",
@@ -117,11 +117,13 @@ const Projects = () => {
                   shadowPRefs.current[index].style.backdropFilter = "none";
                 }}>
                 <InteractiveImage src={image.src} alt={image.alt} />
-                <div>
-                  <p className="absolute textPurple font-[700] bottom-16 ml-5">Used and Learned</p>
-                  <p
-                    ref={(el) => (shadowPRefs.current[index] = el)}
-                    className="text-center flex gap-8 rounded-[6px] px-3 absolute bottom-5 items-center left-0 shadow-p">
+                <div
+                  ref={(el) => (shadowPRefs.current[index] = el)}
+                  className="flex flex-col absolute bottom-5 items-center left-0 shadow-p flex-wrap break-words">
+                  <p className="textPurple font-[700] bottom-16 ml-5">
+                    Used and Learned
+                  </p>
+                  <p className="text-center flex flex-wrap justify-center gap-8 rounded-[6px] px-3 ">
                     {image.tech1 && (
                       <Image src={image.tech1} width={40} height={40} alt="" />
                     )}
@@ -141,12 +143,14 @@ const Projects = () => {
                 </div>
               </motion.div>
               <div
-                className={`w-1/2 break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${
+                className={`md:w-[47vw] w-[75vw] mobileWidth break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${
                   index % 2 === 0 ? "text-right p-5" : "text-left p-5"
                 }`}>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-[18px] font-[600]">{image.alt}</h3>
-                  <p className="opacity-50">Visit Links =&gt; </p>
+                  <h3 className="text-[22px] font-[600]">{image.alt}</h3>
+                  <p className="opacity-50 sm:visible hidden text-[1rem]">
+                    Visit Links =&gt;{" "}
+                  </p>
                   <div className="flex gap-5">
                     <a
                       href={image.repository}
