@@ -125,25 +125,25 @@ const Projects = () => {
                   </p>
                   <p className="text-center flex flex-wrap justify-center gap-8 rounded-[6px] px-3 ">
                     {image.tech1 && (
-                      <Image src={image.tech1} width={40} height={40} alt="" />
+                      <Image className="techWidth" src={image.tech1} width={40} height={40} alt="" />
                     )}
                     {image.tech2 && (
-                      <Image src={image.tech2} width={40} height={40} alt="" />
+                      <Image className="techWidth" src={image.tech2} width={40} height={40} alt="" />
                     )}
                     {image.tech3 && (
-                      <Image src={image.tech3} width={40} height={40} alt="" />
+                      <Image className="techWidth" src={image.tech3} width={40} height={40} alt="" />
                     )}
                     {image.tech4 && (
-                      <Image src={image.tech4} width={40} height={40} alt="" />
+                      <Image className="techWidth" src={image.tech4} width={40} height={40} alt="" />
                     )}
                     {image.tech5 && (
-                      <Image src={image.tech5} width={40} height={40} alt="" />
+                      <Image className="techWidth" src={image.tech5} width={40} height={40} alt="" />
                     )}
                   </p>
                 </div>
               </motion.div>
               <div
-                className={`md:w-[47vw] w-[75vw] mobileWidth break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${
+                className={`md:w-[47vw] w-[95vw] mobileWidth break-words text-justify max-h-[180px] overflow-y-auto  scrollBar ${
                   index % 2 === 0 ? "text-right p-5" : "text-left p-5"
                 }`}>
                 <div className="flex justify-between items-center">

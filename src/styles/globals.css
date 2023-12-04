@@ -183,6 +183,9 @@ coverWrapper::after {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
+.textShadow {
+  text-shadow: 1px 1px 2px rgb(66, 4, 66), 0 0 1em rgb(162, 0, 255), 0 0 0.2em blue;
+}
 
 .scrollBar::-webkit-scrollbar-track {
   background-color: transparent;
@@ -190,6 +193,10 @@ coverWrapper::after {
 @media only screen and (max-width: 540px) {
   .mobileWidth {
     width: 95vw;
+  }
+  .techWidth{
+    width: 30px;
+    height: 30px;
   }
   .coverCard {
     width: 250px;
