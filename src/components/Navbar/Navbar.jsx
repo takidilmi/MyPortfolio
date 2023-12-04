@@ -40,7 +40,7 @@ const Navbar = () => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 className={`text-[18px] cursor-pointer self-center ${
-                  hover ? "textPurple" : ""
+                  hover ? "opacity-70" : ""
                 }`}>
                 Get in Touch
               </p>

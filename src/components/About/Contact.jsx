@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { TbArrowBigUpLines } from "react-icons/tb";
+import $ from "jquery";
 
 const Contact = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -39,7 +41,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center mt-2 pb-10" id="app">
+      <div className="flex items-center justify-center mt-5 pb-10" id="app">
         <div className={`addProduct ${formOpen ? "open" : ""}`}>
           {!formOpen && (
             <div className="buttonCopy" onClick={() => setFormOpen(true)}>
@@ -101,6 +103,22 @@ const Contact = () => {
             </form>
           )}
         </div>
+      </div>
+      <div>
+        <TbArrowBigUpLines
+          size={80}
+          className="cursor-pointer text-white opacity-60"
+          style={{
+            animation: "bounce",
+            animationIterationCount: "infinite",
+            animationTimingFunction: "ease-in-out",
+            animationDirection: "alternate",
+            animationDuration: "2s",
+            animationFillMode: "both",
+            animationPlayState: "running",
+          }}
+          onClick={() => $("html, body").animate({ scrollTop: 0 }, "slow")}
+        />
       </div>
     </>
   );
