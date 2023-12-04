@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <div className="overflow-hidden">
+        <div className="overflow-hidden" id="techStack">
           <TechStack />
         </div>
         <Contact />

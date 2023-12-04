@@ -4,6 +4,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { TfiGithub } from "react-icons/tfi";
 import { PiFileHtmlLight } from "react-icons/pi";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const images = [
   {
@@ -125,19 +127,49 @@ const Projects = () => {
                   </p>
                   <p className="text-center flex flex-wrap justify-center gap-8 rounded-[6px] px-3 ">
                     {image.tech1 && (
-                      <Image className="techWidth" src={image.tech1} width={40} height={40} alt="" />
+                      <Image
+                        className="techWidth"
+                        src={image.tech1}
+                        width={40}
+                        height={40}
+                        alt=""
+                      />
                     )}
                     {image.tech2 && (
-                      <Image className="techWidth" src={image.tech2} width={40} height={40} alt="" />
+                      <Image
+                        className="techWidth"
+                        src={image.tech2}
+                        width={40}
+                        height={40}
+                        alt=""
+                      />
                     )}
                     {image.tech3 && (
-                      <Image className="techWidth" src={image.tech3} width={40} height={40} alt="" />
+                      <Image
+                        className="techWidth"
+                        src={image.tech3}
+                        width={40}
+                        height={40}
+                        alt=""
+                      />
                     )}
                     {image.tech4 && (
-                      <Image className="techWidth" src={image.tech4} width={40} height={40} alt="" />
+                      <Image
+                        className="techWidth"
+                        src={image.tech4}
+                        width={40}
+                        height={40}
+                        alt=""
+                      />
                     )}
                     {image.tech5 && (
-                      <Image className="techWidth" src={image.tech5} width={40} height={40} alt="" />
+                      <Image
+                        className="techWidth"
+                        src={image.tech5}
+                        width={40}
+                        height={40}
+                        alt=""
+                      />
                     )}
                   </p>
                 </div>
@@ -147,23 +179,35 @@ const Projects = () => {
                   index % 2 === 0 ? "text-right p-5" : "text-left p-5"
                 }`}>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-[22px] font-[600]">{image.alt}</h3>
-                  <p className="opacity-50 sm:visible hidden text-[1rem]">
-                    Visit Links =&gt;{" "}
+                  <Link
+                    href={image.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[24px] font-[600]">
+                    {image.alt}
+                  </Link>
+
+                  <p className="opacity-50 items-center gap-1 justify-center sm:flex hidden text-[1rem]">
+                    <p>Visit Links</p>{" "}
+                    <motion.div
+                      animate={{ x: ["-10%", "10%"] }}
+                      transition={{ repeat: Infinity, duration: 2 }}>
+                      <FaArrowRight size={15} />
+                    </motion.div>
                   </p>
                   <div className="flex gap-5">
-                    <a
+                    <Link
                       href={image.repository}
                       target="_blank"
                       rel="noopener noreferrer">
                       <TfiGithub size={30} />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href={image.link}
                       target="_blank"
                       rel="noopener noreferrer">
                       <PiFileHtmlLight size={30} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <br></br>
