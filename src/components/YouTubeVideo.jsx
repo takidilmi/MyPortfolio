@@ -21,10 +21,10 @@ const YouTubeVideo = () => {
   return (
     <>
       <button
-        className="text-[16px] self-end hover:opacity-70"
+        className="text-[16px] text-white hover:bg-[#27203ce1] bg-[#27203C] p-2 rounded-[4px] underlineEffectSides self-end"
         type="button"
         onClick={handleButtonClick}>
-        {showVideo ? "(Hide Video)" : "(Show Video)"}
+        {showVideo ? "Hide Video" : "Show Video"}
       </button>
       <AnimatePresence>
         {showVideo && (
@@ -36,10 +36,10 @@ const YouTubeVideo = () => {
               transition={{ duration: 0.8 }}
               className={showVideo ? "video-animation flex flex-col w-[641px] h-[410px]" : ""}>
               <button
-                className="text-[12px] hover:text-blue-500"
+                className="text-[12px] p-1 hover:text-blue-500"
                 type="button"
                 onClick={handleButtonClick}>
-                {showVideo ? "(Hide Video)" : "(Show Video)"}
+                {showVideo ? "Hide Video" : "Show Video"}
               </button>
               <Suspense fallback={<div>Loading...</div>}>
                 <YouTube videoId="wIc0YhcqZH4" opts={opts} />

@@ -19,7 +19,7 @@ const About = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
         className="text-slate-200 pointer-events-none justify-center flex flex-col items-center mt-20">
-        <h2 className="font-[500]">About Me</h2>
+        <h2 className="font-[500] mb-1">About Me</h2>
         <div className="font-[500] pointer-events-auto relative">
           <YouTubeVideo />
         </div>

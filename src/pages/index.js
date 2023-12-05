@@ -18,7 +18,7 @@ export default function Home() {
           className="flex mt-14 flex-col items-center justify-center"
           id="projects">
           <motion.h2
-            className="pointer-events-none"
+            className="pointer-events-none mt-10"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 5 }}>
