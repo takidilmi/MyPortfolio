@@ -21,7 +21,7 @@ const YouTubeVideo = () => {
   return (
     <>
       <button
-        className="text-[12px] self-end hover:opacity-70"
+        className="text-[16px] self-end hover:opacity-70"
         type="button"
         onClick={handleButtonClick}>
         {showVideo ? "(Hide Video)" : "(Show Video)"}
