@@ -6,15 +6,15 @@ import PdfViewer from "../PdfViewer/PdfViewer";
 
 const Hero = () => {
   return (
-    <div>
-      <div className="flex flex-row flex-wrap-reverse justify-around items-center text-white">
+    <>
+      <div className="flex mt-10 flex-row flex-wrap-reverse justify-around items-center text-white">
         <HoverEffect />
-        <motion.div className="text-[30px] break-words">
+        <motion.h1 className="text-[30px] break-words">
           <motion.p
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}>
-            Hi, my name is{" "}
+            Hello, I’m{" "}
           </motion.p>
           <motion.b
             initial={{ y: -250, opacity: 0 }}
@@ -23,12 +23,17 @@ const Hero = () => {
             <NameWriter />
           </motion.b>
           <motion.p
+            className="lg:w-[40vw] md:w-[80vw] sm:w-[95vw] w-[99vw] break-words"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}>
-            , a talented frontend web developer.
+            , a proficient front-end web developer specializing in JavaScrip
+            Next.js, Redux, CSS, HTML, and Firebase. Welcome to my portfolio
+            where innovation meets design.
           </motion.p>
-          <div><PdfViewer /></div>
+          <div>
+            <PdfViewer />
+          </div>
           <motion.br></motion.br>
           <motion.p
             className="opacity-70"
@@ -37,9 +42,9 @@ const Hero = () => {
             transition={{ duration: 1, delay: 2.5 }}>
             let me show you...
           </motion.p>
-        </motion.div>
+        </motion.h1>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -199,7 +199,7 @@ coverWrapper::after {
     width: 30px;
     height: 30px;
   }
-  .coverCard{
+  .coverCard {
     height: 370px;
   }
   .coverWrapper {
@@ -220,4 +220,11 @@ coverWrapper::after {
   to {
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
   }
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

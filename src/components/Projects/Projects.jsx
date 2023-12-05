@@ -71,7 +71,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="mt-20 overflow-hidden flex flex-col items-center text-slate-200">
+      <div className="overflow-hidden flex flex-col items-center text-slate-200">
         {images.map((image, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const controls = useAnimation();
@@ -125,7 +125,7 @@ const Projects = () => {
                 <InteractiveImage src={image.src} alt={image.alt} />
                 <div
                   ref={(el) => (shadowPRefs.current[index] = el)}
-                  className="flex flex-col absolute bottom-5 items-center left-0 shadow-p flex-wrap break-words">
+                  className="flex pointer-events-none flex-col absolute bottom-5 items-center left-0 shadow-p flex-wrap break-words">
                   <p className="textPurple font-[700] bottom-16 ml-5">
                     Used and Learned
                   </p>

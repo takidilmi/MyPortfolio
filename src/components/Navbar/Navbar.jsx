@@ -60,7 +60,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Image
-            className="absolute top-[-20px] z-[-1]"
+            className="absolute pointer-events-none top-[-20px] z-[-1]"
             src="/logo.svg"
             width={200}
             height={200}
