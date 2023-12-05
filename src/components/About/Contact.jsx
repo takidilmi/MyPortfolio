@@ -99,7 +99,7 @@ const Contact = () => {
                 <button type="submit" className="submitButton">
                   Send
                 </button>
-                <div className="cancel">
+                <div className="cancel text-white">
                   <span onClick={cancel}>Close</span>
                 </div>
               </form>
