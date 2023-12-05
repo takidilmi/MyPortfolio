@@ -18,9 +18,9 @@ const About = () => {
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
-        className="text-slate-200 justify-center flex flex-col items-center mt-20">
+        className="text-slate-200 pointer-events-none justify-center flex flex-col items-center mt-20">
         <h2 className="font-[500]">About Me</h2>
-        <div className="font-[500] relative">
+        <div className="font-[500] pointer-events-auto relative">
           <YouTubeVideo />
         </div>
         <motion.p
@@ -32,37 +32,37 @@ const About = () => {
           experience in creating beautiful and responsive websites. I specialize
           in{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             Next.js
           </span>
           , a React framework that enables fast and{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             SEO-friendly
           </span>{" "}
           web development. I also have strong skills in{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             JavaScript
           </span>
           ,{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             HTML
           </span>
           ,{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             CSS
           </span>
           , and{" "}
           <span
-            className="cursor-pointer hover:text-slate-300"
+            className="cursor-pointer pointer-events-auto hover:text-slate-300"
             onClick={scrollToTechStack}>
             Tailwind
           </span>

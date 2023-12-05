@@ -18,11 +18,11 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky textShadow top-0 z-[999]">
+      <div className="sticky pointer-events-none textShadow top-0 z-[999]">
         <div className="text-white flex justify-around relative">
           <div className="flex justify-around w-full p-2 flex-wrap text-[25px]">
             <Link
-              className="flex flex-row gap-2 flex-wrap items-center"
+              className="flex pointer-events-auto flex-row gap-2 flex-wrap items-center"
               href="https://www.linkedin.com/in/takidilmi/"
               target="_blank"
               rel="noopener noreferrer">
@@ -39,7 +39,7 @@ const Navbar = () => {
                 onClick={handleScrollToBottom}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                className={`text-[18px] cursor-pointer self-center ${
+                className={`text-[18px] pointer-events-auto cursor-pointer self-center ${
                   hover ? "opacity-70" : ""
                 }`}>
                 Get in Touch
@@ -51,7 +51,7 @@ const Navbar = () => {
               </motion.div>
             </div>
             <Link
-              className="flex gap-2 items-center"
+              className="flex pointer-events-auto gap-2 items-center"
               href="https://github.com/takidilmi"
               target="_blank"
               rel="noopener noreferrer">

@@ -9,7 +9,7 @@ const Hero = () => {
     <>
       <div className="flex mt-10 flex-row flex-wrap-reverse justify-around items-center text-white">
         <HoverEffect />
-        <motion.h1 className="text-[30px] break-words">
+        <motion.h1 className="pointer-events-none text-[30px] break-words">
           <motion.p
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -31,7 +31,7 @@ const Hero = () => {
             Next.js, Redux, CSS, HTML, and Firebase. Welcome to my portfolio
             where innovation meets design.
           </motion.p>
-          <div>
+          <div className="pointer-events-auto">
             <PdfViewer />
           </div>
           <motion.br></motion.br>
