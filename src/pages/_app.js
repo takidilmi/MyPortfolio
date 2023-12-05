@@ -33,10 +33,10 @@ export default function App({ Component, pageProps }) {
             "Portfolio of Takieddine Dilmi, a proficient front-end web developer specializing in JavaScript, Tailwind, Next.js, Redux, CSS, HTML, and Firebase. Explore my projects and get in touch for collaboration.",
           images: [
             {
-              url: "/logo.svg",
+              url: "/Taki.png",
               width: 800,
               height: 600,
-              alt: "Takieddine Dilmi - Front-End Web Developer",
+              alt: "Taki",
             },
           ],
         }}
