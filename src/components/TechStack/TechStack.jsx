@@ -47,7 +47,7 @@ const TechStack = () => {
   return (
     <>
       <div className="flex mt-6 flex-col items-center">
-        <h2>My Philosophy</h2>
+        <h2>Skills</h2>
         <div className={`${styles.container}`}>
           <div className={styles.svgContainer} ref={containerRef1}>
             <div

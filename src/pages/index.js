@@ -8,7 +8,7 @@ import TechStack from "@/components/TechStack/TechStack";
 export default function Home() {
   return (
     <>
-      <div className="relative px-3">
+      <div className="relative overflow-hidden px-3">
         <Section id="hero">
           <Hero />
         </Section>
