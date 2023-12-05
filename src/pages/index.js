@@ -10,17 +10,15 @@ export default function Home() {
   return (
     <>
       <div className="relative overflow-hidden px-3">
-        <Section id="hero">
-          <Hero />
-        </Section>
         <Section id="about">
+          <Hero />
           <About />
         </Section>
         <Section
           className="flex mt-14 flex-col items-center justify-center"
           id="projects">
           <motion.h2
-          className="pointer-events-none"
+            className="pointer-events-none"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 5 }}>

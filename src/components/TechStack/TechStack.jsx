@@ -55,7 +55,7 @@ const TechStack = () => {
               className={`${styles.tooltip} ${styles.svg} `}
               onMouseOver={() => handleMouseOver(containerRef1)}
               onMouseOut={() => handleMouseOut(containerRef1)}>
-              <img src="/Tech/icons8-css.svg" />
+              <img src="/Tech/css.svg" />
               <span className={styles.right}>
                 <div className={styles.textContent}>
                   <h3>CSS3</h3>
@@ -74,7 +74,7 @@ const TechStack = () => {
               onMouseOver={() => handleMouseOver(containerRef1)}
               onMouseOut={() => handleMouseOut(containerRef1)}
               className={`${styles.tooltip} ${styles.svg}`}>
-              <img src="/Tech/icons8-tailwind-css.svg" />
+              <img src="/Tech/tailwind-css.svg" />
               <span className={styles.right}>
                 <div className={styles.textContent}>
                   <h3>TailwindCSS</h3>
@@ -131,7 +131,7 @@ const TechStack = () => {
               onMouseOver={() => handleMouseOver(containerRef2)}
               onMouseOut={() => handleMouseOut(containerRef2)}
               className={`${styles.tooltip} ${styles.svg}`}>
-              <img src="/Tech/icons8-firebase.svg" />
+              <img src="/Tech/firebase.svg" />
               <span className={styles.right}>
                 <div className={styles.textContent}>
                   <h3>firebase</h3>
@@ -149,7 +149,7 @@ const TechStack = () => {
               ref={svgRefs.current[2]}
               onMouseOver={() => handleMouseOver(containerRef2)}
               onMouseOut={() => handleMouseOut(containerRef2)}>
-              <img src="/Tech/icons8-nextjs.svg" />
+              <img src="/Tech/nextjs.svg" />
               <span className={styles.right}>
                 <div className={styles.textContent}>
                   <h3>Next.js</h3>
