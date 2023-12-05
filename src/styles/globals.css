@@ -207,3 +207,17 @@ coverWrapper::after {
     height: 270px;
   }
 }
+/*video youtube*/
+.video-animation {
+  animation: clip-path 1s forwards;
+  backdrop-filter: blur(20px);
+}
+
+@keyframes clip-path {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}

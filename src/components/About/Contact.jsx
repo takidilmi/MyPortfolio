@@ -106,17 +106,8 @@ const Contact = () => {
       </div>
       <div>
         <TbArrowBigUpLines
-          size={80}
+          size={60}
           className="cursor-pointer text-white opacity-60"
-          style={{
-            animation: "bounce",
-            animationIterationCount: "infinite",
-            animationTimingFunction: "ease-in-out",
-            animationDirection: "alternate",
-            animationDuration: "2s",
-            animationFillMode: "both",
-            animationPlayState: "running",
-          }}
           onClick={() => $("html, body").animate({ scrollTop: 0 }, "slow")}
         />
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import $ from "jquery";
+import YouTubeVideo from "../YouTubeVideo";
 
 const About = () => {
   const scrollToTechStack = () => {
@@ -18,7 +19,10 @@ const About = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
         className="text-slate-200 text-[30px] justify-center flex flex-col items-center mt-20">
-        <h1 className="font-[500]">AboutMe</h1>
+        <h1 className="flex gap-1">
+          <p className="font-[500]">About Me</p>
+          <div className="relative"><YouTubeVideo /></div>
+        </h1>
         <motion.p
           initial={{ y: -250, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
