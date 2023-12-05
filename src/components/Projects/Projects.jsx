@@ -65,6 +65,16 @@ const images = [
     tech2: "/Tech/css.svg",
     tech3: "/Tech/react-native.svg",
   },
+  {
+    src: "/projects/Portfolio.png",
+    repository: "https://github.com/takidilmi/MyPortfolio",
+    alt: "Portfolio",
+    link: "https://taki-dilmi.vercel.app/",
+    text: "I created my own portfolio using stack:Next-Seo , skill:Tailwind, and skill:NextJs.",
+    tech1: "/Tech/css.svg",
+    tech2: "/Tech/nextjs.svg",
+    tech3: "/Tech/tailwind-css.svg",
+  },
 ];
 const Projects = () => {
   const shadowPRefs = useRef([]);

@@ -11,6 +11,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="preload" href="/images/background.jpg" as="image" />
+          <link rel="icon" href="/Taki.png" />
         </Head>
         <body>
           <Main />
