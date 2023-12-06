@@ -8,7 +8,6 @@ import {
   FaSearchPlus,
   FaSearchMinus,
 } from "react-icons/fa";
-import Link from "next/link";
 
 function PdfViewer() {
   const [numPages, setNumPages] = useState(null);
