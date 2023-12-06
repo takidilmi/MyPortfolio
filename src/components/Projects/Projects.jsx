@@ -146,7 +146,7 @@ const Projects = () => {
                         src={image.tech1}
                         width={40}
                         height={40}
-                        alt={image.tech1.split('/').pop().split('.')[0]}
+                        alt={image.tech1.split("/").pop().split(".")[0]}
                       />
                     )}
                     {image.tech2 && (
@@ -155,7 +155,7 @@ const Projects = () => {
                         src={image.tech2}
                         width={40}
                         height={40}
-                        alt={image.tech2.split('/').pop().split('.')[0]}
+                        alt={image.tech2.split("/").pop().split(".")[0]}
                       />
                     )}
                     {image.tech3 && (
@@ -164,7 +164,7 @@ const Projects = () => {
                         src={image.tech3}
                         width={40}
                         height={40}
-                        alt={image.tech3.split('/').pop().split('.')[0]}
+                        alt={image.tech3.split("/").pop().split(".")[0]}
                       />
                     )}
                     {image.tech4 && (
@@ -173,7 +173,7 @@ const Projects = () => {
                         src={image.tech4}
                         width={40}
                         height={40}
-                        alt={image.tech4.split('/').pop().split('.')[0]}
+                        alt={image.tech4.split("/").pop().split(".")[0]}
                       />
                     )}
                     {image.tech5 && (
@@ -182,7 +182,7 @@ const Projects = () => {
                         src={image.tech5}
                         width={40}
                         height={40}
-                        alt={image.tech5.split('/').pop().split('.')[0]}
+                        alt={image.tech5.split("/").pop().split(".")[0]}
                       />
                     )}
                   </p>
@@ -202,7 +202,7 @@ const Projects = () => {
                   </Link>
 
                   <p className="opacity-50 items-center gap-1 justify-center sm:flex hidden text-[1rem]">
-                  <motion.div
+                    <motion.div
                       animate={{ x: ["10%", "-10%"] }}
                       transition={{ repeat: Infinity, duration: 2 }}>
                       <FaArrowLeft size={15} />
@@ -256,11 +256,24 @@ const Projects = () => {
   );
 };
 
-const InteractiveImage = ({ src, alt }) => {
+const InteractiveImage = React.memo(({ src }) => {
   const imageRef = useRef(null);
   let animationFrameId = null;
 
-  const handleInteractionMove = (event) => {
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function () {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  };
+
+  const handleInteractionMove = throttle((event) => {
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId);
     }
@@ -283,7 +296,7 @@ const InteractiveImage = ({ src, alt }) => {
         imageRef.current.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
       }
     });
-  };
+  }, 200);
 
   const handleInteractionEnd = () => {
     if (animationFrameId) {
@@ -330,6 +343,6 @@ const InteractiveImage = ({ src, alt }) => {
       }}
     />
   );
-};
-
+});
+InteractiveImage.displayName = "InteractiveImage";
 export default Projects;
