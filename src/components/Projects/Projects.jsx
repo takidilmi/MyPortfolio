@@ -81,7 +81,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="overflow-hidden flex flex-col items-center text-slate-200">
+      <div className="flex flex-col items-center text-slate-200">
         {images.map((image, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const controls = useAnimation();
@@ -114,7 +114,7 @@ const Projects = () => {
                 visible: { opacity: 1, translateX: 0 },
               }}>
               <motion.div
-                className="md:w-[49vw] w-[130vw] relative p-3 rounded-[6px] overflow-hidden"
+                className="md:w-[47vw] sm:w-[88vw] w-[130vw] relative p-3 rounded-[6px] overflow-hidden"
                 whileHover={{
                   scale: 1.1,
                   backdropFilter: "blur(2px)",
