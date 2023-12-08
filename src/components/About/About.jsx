@@ -27,7 +27,7 @@ const About = () => {
           initial={{ y: -250, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 4 }}
-          className="font-[300] text-[25px]">
+          className="font-[300] md:text-justify text-center text-[25px] px-20">
           Hi, I&apos;m Takieddine Dilmi, a front end web developer with proven
           experience in creating beautiful and responsive websites. I specialize
           in{" "}
