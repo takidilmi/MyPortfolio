@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky pointer-events-none textShadow top-0 z-[999]">
+      <div className="sticky w-screen pointer-events-none textShadow top-0 z-[999]">
         <div className="text-white flex justify-around relative">
           <div className="flex justify-around w-full p-2 flex-wrap text-[25px]">
             <Link
