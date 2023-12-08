@@ -9,7 +9,7 @@ const Section = ({ id, children }) => {
 
   React.useEffect(() => {
     if (inView) {
-      window.history.replaceState(null, null, `#${id}`);
+      window.history.replaceState(null, null, `home#${id}`);
     }
   }, [inView, id]);
 
