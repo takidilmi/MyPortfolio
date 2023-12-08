@@ -1,38 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Takieddine Dilmi's Portfolio Website
+
+This is the repository for Takieddine Dilmi's portfolio website, showcasing my work as a frontend web developer.
+
+## Description
+
+This website serves as a showcase of my skills, projects, and experience as a frontend web developer. It includes a collection of my best work, a brief introduction about myself, and ways to get in touch with me.
+
+## Technologies Used
+
+- JavaScript
+- React.js
+- Next.js
+- Tailwind
+- Firebase
+- Redux
+- HTML5
+- CSS3
+- Bootstrap
+
+## Key Features
+
+- Responsive design
+- Interactive user interface
+- Project showcase
+- Contact information
 
 ## Getting Started
 
-First, run the development server:
+To view the live version of the website, simply visit [https://taki-dilmi.vercel.app/].
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Installation
+
+To run the website locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies using npm:
+   `npm install`
+
+3. Start the development server:
+   `npm run dev`
+
+4. Open your web browser and go to http://localhost:3000 to view the website.
+
+## Usage
+
+Feel free to explore the website to learn more about my work and get in touch with me.
+
+## Contributing
+
+I welcome any contributions or feedback. If you have any suggestions or find any issues, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes in your branch.
+4. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Contact
+
+- Email: [angeldilmi@gmail.com]
+- LinkedIn: [https://www.linkedin.com/in/takidilmi/]
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
