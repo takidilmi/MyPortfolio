@@ -8,15 +8,13 @@ This website serves as a showcase of my skills, projects, and experience as a fr
 
 ## Technologies Used
 
-- JavaScript
-- React.js
 - Next.js
 - Tailwind
-- Firebase
-- Redux
-- HTML5
 - CSS3
-- Bootstrap
+- Framer Motion
+- SASS
+- JQuery
+- Next-SEO
 
 ## Key Features
 
